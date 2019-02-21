@@ -1,2 +1,1 @@
-SELECT * FROM react_sql.products;
-
+select * from react_sql.products;

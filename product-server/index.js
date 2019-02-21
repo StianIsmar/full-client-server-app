@@ -37,16 +37,23 @@ app.get('/empty', (req, res) => {
     res.send('Empty')
 });
 
-/*app.get('/products/add', (req, res) => {
+app.get('/products/add', (req, res) => {
     const { name, price } = req.query;
+    const INSERT_PRODUCTS_QUERY = `INSERT INTO products (name, price) VALUES('${name}',${price})`
+    connection.query(INSERT_PRODUCTS_QUERY, (err, results) => {
+        if (err) {
+            return res.send(err)
+        }
+        else {
+            return res.send('successfully added product')
+        }
+    })
     console.log(name, price)
-    res.send('adding product')
-})*/
+})
 
 app.get('/products', (req, res) => {
     connection.query(SELECT_ALL_PRODUCTS_QUERY, (err, result) => {
         if (err) {
-            console.log("ERRRRRORRRR")
             return res.send(err)
         }
         else {
