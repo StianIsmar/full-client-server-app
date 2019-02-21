@@ -26,7 +26,6 @@ connection.connect(err => {
     }
 });
 
-
 app.use(cors());
 
 app.get('/', (req, res) => {
