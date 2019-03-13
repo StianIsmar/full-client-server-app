@@ -35,16 +35,18 @@ class App extends Component {
   render() {
     const { products, product } = this.state;
     return (
-      <div className="App">
-        {products.map(this.renderProduct)}
-        <div>
-          <input
-            value={product.name}
-            onChange={e => this.setState({ product: { ...product, name: e.target.value } })} />
-          <input
-            value={product.price}
-            onChange={e => this.setState({ product: { ...product, price: e.target.value } })} />
-          <button onClick={this.addProduct}> Add product</button>
+      <div className="back">
+        <div className="App">
+          {products.map(this.renderProduct)}
+          <div>
+            <input
+              value={product.name}
+              onChange={e => this.setState({ product: { ...product, name: e.target.value } })} />
+            <input
+              value={product.price}
+              onChange={e => this.setState({ product: { ...product, price: e.target.value } })} />
+            <button onClick={this.addProduct}> Add product</button>
+          </div>
         </div>
       </div>
     );
